@@ -2,25 +2,13 @@
 <html lang="en" xmlns:th = "http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
-    <title>Create Contract</title>
+    <title>Accounts Main Index</title>
 </head>
 <body>
-    <p>Contract Creation Page!</p>
-<form method="post">
-    <div>
-        <label> Name : <input type="text" name="name"/></label>
-    </div>
-    <div>
-        <label> Address : <input type="text" name="address"/></label>
-    </div>
-    <div>
-        <label> Description : <input type="text" name="jobDescription"/></label>
-    </div>
+    <p>Account Main Page!</p>
+    <p>Lists All Current Accounts!</p>
     <table>
         <tr>
-            <th>
-                Selected
-            </th>
             <th>
                 Employee Id
             </th>
@@ -36,9 +24,6 @@
         </tr>
         <tr th:each="employee : ${employees}">
             <td>
-                <input type="checkbox" th:id="${employee.id}" name="users" th:value="${employee.id}">
-            </td>
-            <td>
                 <a th:href="@{'/accounts/view/' + ${employee.id}}" th:text="${employee.id}"></a>
             </td>
             <td>
@@ -50,13 +35,13 @@
             <td>
                 <p th:text="${employee.username}"></p>
             </td>
+            <td>
+
+            </td>
         </tr>
     </table>
     <table>
         <tr>
-            <th>
-                Selected
-            </th>
             <th>
                 Customer Id
             </th>
@@ -71,9 +56,6 @@
             </th>
         </tr>
         <tr th:each="customer : ${customers}">
-            <td>
-                <input type="checkbox" th:id="${customer.id}" name="users" th:value="${customer.id}">
-            </td>
             <td>
                 <a th:href="@{'/accounts/view/' + ${customer.id}}" th:text="${customer.id}"></a>
             </td>
@@ -91,9 +73,5 @@
             </td>
         </tr>
     </table>
-    <div>
-        <input type="submit" value="Add"/>
-    </div>
-</form>
 </body>
 </html>

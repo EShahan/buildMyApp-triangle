@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th = "http://www.thymeleaf.org/">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Register</title>
+    <title>Add Account</title>
 </head>
 <body>
-    <p>Registration Page!</p>
+    <p>Add Account Page!</p>
     <form method="post">
         <div>
             <label> Email : <input type="text" name="username"/></label>
@@ -20,10 +20,13 @@
             <label> Last Name : <input type="text" name="lastName"/></label>
         </div>
         <div>
-            <label> Employee Code? : <input type="password" name="employeeCode"/></label>
+            <label> Role :
+                <label for="customer"> Customer : <input type="radio" id="customer" name="role" value="ROLE_CUSTOMER"></label>
+                <label for="employee"> Employee : <input type="radio" id="employee" name="role" value="ROLE_EMPLOYEE"></label>
+            </label>
         </div>
         <div>
-            <input type="submit" value="Register"/>
+            <input type="submit" value="Add"/>
         </div>
     </form>
 </body>
